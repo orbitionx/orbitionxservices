@@ -6,18 +6,31 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <WhyChooseUsSection />
-      <CaseStudiesSection />
-      <CTASection />
-      <Footer />
+      <AnimatedSection>
+        <ServicesSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <AboutSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhyChooseUsSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <CaseStudiesSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <CTASection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Footer />
+      </AnimatedSection>
     </div>
   );
 };
