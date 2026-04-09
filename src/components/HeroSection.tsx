@@ -25,6 +25,9 @@ const HeroSection = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-secondary animate-pulse-glow" />
       </div>
 
+      {/* AI Brain Neural Network Animation */}
+      <AIBrainAnimation />
+
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 text-sm text-muted-foreground animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
