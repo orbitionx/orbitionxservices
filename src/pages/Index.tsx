@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import CTASection from "@/components/CTASection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -24,6 +25,9 @@ const Index = () => {
       </AnimatedSection>
       <AnimatedSection>
         <CaseStudiesSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ContactSection />
       </AnimatedSection>
       <AnimatedSection>
         <CTASection />
