@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import AIBrainAnimation from "./AIBrainAnimation";
 
 const HeroSection = () => {
   return (
