@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 const nodes = [
@@ -50,24 +51,42 @@ const AIBrainAnimation = () => {
           ))}
 
           {/* Data pulse traveling along connections */}
-          {connections.slice(0, 12).map(([from, to], i) => (
-            <motion.circle
-              key={`pulse-${i}`}
-              r="0.6"
-              fill="hsl(187 100% 50%)"
-              initial={{ opacity: 0 }}
-              animate={{
-                cx: [nodes[from].x, nodes[to].x],
-                cy: [nodes[from].y, nodes[to].y],
-                opacity: [0, 0.8, 0],
-              }}
-              transition={{
-                duration: 1.5 + Math.random() * 2,
-                repeat: Infinity,
-                delay: i * 0.4,
-                ease: "easeInOut",
-              }}
-            />
+          {connections.slice(0, 16).map(([from, to], i) => (
+            <React.Fragment key={`pulse-${i}`}>
+              <motion.circle
+                r="1"
+                fill="hsl(187 100% 65%)"
+                initial={{ opacity: 0 }}
+                animate={{
+                  cx: [nodes[from].x, nodes[to].x],
+                  cy: [nodes[from].y, nodes[to].y],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: i * 0.35,
+                  ease: "easeInOut",
+                }}
+                style={{ filter: "drop-shadow(0 0 3px hsl(187 100% 65%))" }}
+              />
+              <motion.circle
+                r="2"
+                fill="hsl(187 100% 65% / 0.3)"
+                initial={{ opacity: 0 }}
+                animate={{
+                  cx: [nodes[from].x, nodes[to].x],
+                  cy: [nodes[from].y, nodes[to].y],
+                  opacity: [0, 0.5, 0],
+                }}
+                transition={{
+                  duration: 2 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: i * 0.35,
+                  ease: "easeInOut",
+                }}
+              />
+            </React.Fragment>
           ))}
         </svg>
 
