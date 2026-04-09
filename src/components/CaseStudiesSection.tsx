@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const caseStudies = [
   {
@@ -44,9 +45,13 @@ const CaseStudiesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {caseStudies.map((study) => (
-            <div
+          {caseStudies.map((study, index) => (
+            <motion.div
               key={study.client}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group glass rounded-2xl p-8 gradient-border hover:bg-card/60 transition-all duration-500 flex flex-col"
             >
               <div className="flex items-center justify-between mb-6">
@@ -59,7 +64,7 @@ const CaseStudiesSection = () => {
               </div>
               <h3 className="font-display text-lg font-semibold mb-2">{study.client}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed flex-1">{study.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
