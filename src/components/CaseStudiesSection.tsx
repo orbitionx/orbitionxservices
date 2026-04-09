@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import adsDashboard from "@/assets/ads-dashboard-proof.png";
 
 const caseStudies = [
   {
@@ -67,6 +68,25 @@ const CaseStudiesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Live proof screenshot */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 glass rounded-2xl p-4 md:p-6 gradient-border"
+        >
+          <p className="text-xs tracking-widest uppercase text-muted-foreground mb-4 text-center">Live Campaign Dashboard</p>
+          <div className="rounded-xl overflow-hidden border border-border/30">
+            <img
+              src={adsDashboard}
+              alt="Live advertising campaign performance dashboard showing active campaigns and results"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
