@@ -26,7 +26,7 @@ const AIBrainAnimation = () => {
       <motion.div
         className="relative w-[420px] h-[420px] md:w-[520px] md:h-[520px]"
         animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
       >
         {/* Neural connections */}
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
@@ -37,10 +37,10 @@ const AIBrainAnimation = () => {
               y1={nodes[from].y}
               x2={nodes[to].x}
               y2={nodes[to].y}
-              stroke="hsl(216 100% 50%)"
-              strokeWidth="0.15"
-              initial={{ opacity: 0.1 }}
-              animate={{ opacity: [0.08, 0.3, 0.08] }}
+              stroke="hsl(216 100% 60%)"
+              strokeWidth="0.25"
+              initial={{ opacity: 0.15 }}
+              animate={{ opacity: [0.12, 0.45, 0.12] }}
               transition={{
                 duration: 2 + Math.random() * 3,
                 repeat: Infinity,
