@@ -1,4 +1,5 @@
 import { Brain, Code, Zap, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -43,17 +44,20 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group relative glass rounded-2xl p-8 hover:bg-card/60 transition-all duration-500 gradient-border"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

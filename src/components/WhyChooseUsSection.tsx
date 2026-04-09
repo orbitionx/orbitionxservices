@@ -1,4 +1,5 @@
 import { Cpu, Target, TrendingUp, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 const reasons = [
   {
@@ -41,8 +42,12 @@ const WhyChooseUsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, index) => (
-            <div
+            <motion.div
               key={reason.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.12 }}
               className="group text-center p-8 rounded-2xl glass gradient-border hover:bg-card/60 transition-all duration-500"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -50,7 +55,7 @@ const WhyChooseUsSection = () => {
               </div>
               <h3 className="font-display text-lg font-semibold mb-3">{reason.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
