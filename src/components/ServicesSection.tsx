@@ -1,4 +1,5 @@
 import { Brain, Code, Zap, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
