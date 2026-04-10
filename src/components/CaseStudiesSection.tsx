@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import ProjectCard from "./ProjectCard";
+
+// Oxy Plus assets
+import oxyHero from "@/assets/oxy-hero.png";
+import oxyProductDuo from "@/assets/oxy-product-duo.png";
+import oxyAthlete1 from "@/assets/oxy-athlete-1.png";
+import oxyAthlete2 from "@/assets/oxy-athlete-2.png";
+
+// Proof / dashboard assets
 import adsDashboard from "@/assets/ads-dashboard-proof.png";
 import proofShopifySales from "@/assets/proof-shopify-sales.png";
 import proofMetaAds1 from "@/assets/proof-meta-ads-1.jpeg";
@@ -9,12 +17,15 @@ import proofInstagramAds from "@/assets/proof-instagram-ads.jpeg";
 import proofSeoCranes from "@/assets/proof-seo-cranes.png";
 import proofOrbitionSales from "@/assets/proof-orbition-sales.jpeg";
 import proofUsSales from "@/assets/proof-us-sales.jpeg";
-import oxyHero from "@/assets/oxy-hero.png";
-import oxyProductDuo from "@/assets/oxy-product-duo.png";
-import oxyAthlete1 from "@/assets/oxy-athlete-1.png";
-import oxyAthlete2 from "@/assets/oxy-athlete-2.png";
-import oxyMannequin from "@/assets/oxy-mannequin.png";
-import oxyPackaging from "@/assets/oxy-packaging.png";
+
+// New Shopify & WordPress assets
+import proofStuzzi from "@/assets/proof-stuzzi-store.png";
+import proofEliteSales from "@/assets/proof-elite-sales.jpg";
+import proofRemedy from "@/assets/proof-remedy-store.jpg";
+import proofRains from "@/assets/proof-rains-store.jpg";
+import proofTaika from "@/assets/proof-taika-store.jpg";
+import proofWakeup from "@/assets/proof-wakeup-store.png";
+import proofShopifyDaily from "@/assets/proof-shopify-daily-sales.webp";
 
 const projects = [
   {
@@ -31,9 +42,45 @@ const projects = [
       { src: oxyAthlete1, label: "Performance Ad", alt: "Athlete wearing Oxy Plus nasal strip" },
       { src: oxyAthlete2, label: "Endurance Ad", alt: "Female athlete wearing Oxy Plus nasal strip" },
     ],
-    extraImages: [
-      { src: oxyMannequin, label: "Product Demo", alt: "Mannequin showing Oxy Plus nasal strip" },
-      { src: oxyPackaging, label: "Packaging", alt: "Oxy Plus packaging and product information" },
+  },
+  {
+    client: "Shopify Stores",
+    industry: "Shopify / E-commerce",
+    description:
+      "Custom Shopify store design & development for multiple brands — from premium hot sauces to skincare to coffee. Full store builds with optimized product pages, conversion-focused layouts, and brand-aligned design systems.",
+    metric: "Rs 2.4M+",
+    metricLabel: "Total Sales Generated",
+    images: [
+      { src: proofStuzzi, label: "Stuzzi — Premium Hot Sauce Store", alt: "Stuzzi hot sauce Shopify store" },
+      { src: proofRemedy, label: "Remedy — Skincare Store", alt: "Remedy skincare product page" },
+      { src: proofTaika, label: "Taika — Coffee E-commerce", alt: "Taika coffee Shopify store" },
+      { src: proofWakeup, label: "Wake Up Pill — Health Supplements", alt: "Wake Up Pill product page with subscription" },
+    ],
+  },
+  {
+    client: "Shopify Sales & Analytics",
+    industry: "Shopify / Performance",
+    description:
+      "Driving real revenue through optimized Shopify stores — Rs 2.367M in total sales with 154% growth, 951 orders, and consistent scaling across multiple storefronts. Full analytics tracking and conversion optimization.",
+    metric: "↑154%",
+    metricLabel: "Sales Growth",
+    images: [
+      { src: proofEliteSales, label: "Elite Store — Rs 2.367M Sales, ↑154%", alt: "Shopify dashboard showing Rs 2.367M total sales" },
+      { src: proofShopifyDaily, label: "Daily Sales Report — $17.9K, 122 Orders", alt: "Shopify daily sales report" },
+      { src: proofShopifySales, label: "Store Analytics — QAR 3,370 Net Sales", alt: "Shopify sales analytics" },
+      { src: proofOrbitionSales, label: "Orbition — $989.9 Sales, ↑17%", alt: "Orbition Shopify sales dashboard" },
+    ],
+  },
+  {
+    client: "WordPress Sites",
+    industry: "WordPress / Web Design",
+    description:
+      "Professional WordPress website design and development for fashion, lifestyle, and retail brands. Fully responsive, SEO-optimized, with custom themes and conversion-focused architecture.",
+    metric: "10+",
+    metricLabel: "Sites Launched",
+    images: [
+      { src: proofRains, label: "RAINS — Fashion & Outerwear", alt: "RAINS clothing website navigation" },
+      { src: proofSeoCranes, label: "SEO — #1 Google Ranking", alt: "Google search ranking showing client at top" },
     ],
   },
   {
@@ -44,8 +91,8 @@ const projects = [
     metric: "+340%",
     metricLabel: "Qualified Leads",
     images: [
-      { src: proofMetaAds1, label: "Meta Ads", alt: "Meta ads app install campaign" },
-      { src: proofMetaAds2, label: "Campaign View", alt: "Meta ads full campaign overview" },
+      { src: proofMetaAds1, label: "Meta Ads — 385 Installs", alt: "Meta ads app install campaign" },
+      { src: proofMetaAds2, label: "Full Campaign View", alt: "Meta ads full campaign overview" },
     ],
   },
   {
@@ -68,10 +115,7 @@ const projects = [
     metric: "$2.4M",
     metricLabel: "Automated Revenue",
     images: [
-      { src: proofShopifySales, label: "Shopify Sales", alt: "Shopify sales analytics dashboard" },
-      { src: proofOrbitionSales, label: "Orbition Sales", alt: "Shopify store sales dashboard" },
-      { src: proofUsSales, label: "US Sales +519%", alt: "US store sales showing 519% growth" },
-      { src: proofSeoCranes, label: "SEO #1 Rank", alt: "Google search ranking showing client at top" },
+      { src: proofUsSales, label: "US Sales — ↑519%", alt: "US store sales showing 519% growth" },
     ],
   },
 ];
