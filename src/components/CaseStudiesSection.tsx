@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import adsDashboard from "@/assets/ads-dashboard-proof.png";
 import proofShopifySales from "@/assets/proof-shopify-sales.png";
@@ -8,8 +8,23 @@ import proofInstagramAds from "@/assets/proof-instagram-ads.jpeg";
 import proofSeoCranes from "@/assets/proof-seo-cranes.png";
 import proofOrbitionSales from "@/assets/proof-orbition-sales.jpeg";
 import proofUsSales from "@/assets/proof-us-sales.jpeg";
+import oxyHero from "@/assets/oxy-hero.png";
+import oxyProductDuo from "@/assets/oxy-product-duo.png";
+import oxyAthlete1 from "@/assets/oxy-athlete-1.png";
+import oxyAthlete2 from "@/assets/oxy-athlete-2.png";
+import oxyMannequin from "@/assets/oxy-mannequin.png";
+import oxyPackaging from "@/assets/oxy-packaging.png";
 
 const caseStudies = [
+  {
+    client: "Oxy Plus",
+    industry: "E-commerce / Health",
+    result: "Full brand & store launch",
+    description: "End-to-end e-commerce project — from branding, product photography, AI-generated creatives to a live Shopify store driving sales.",
+    metric: "🚀",
+    metricLabel: "Full Launch",
+    link: "https://www.oxypluss.com",
+  },
   {
     client: "NovaTech Labs",
     industry: "SaaS",
@@ -34,6 +49,15 @@ const caseStudies = [
     metric: "$2.4M",
     metricLabel: "Automated Revenue",
   },
+];
+
+const oxyCreatives = [
+  { src: oxyHero, label: "Oxy Plus — Product Hero Shot", alt: "Oxy Plus nasal strips product packaging" },
+  { src: oxyProductDuo, label: "Oxy Plus — Dual Product Display", alt: "Two Oxy Plus packages on futuristic pedestal" },
+  { src: oxyAthlete1, label: "Oxy Plus — Performance Ad Creative", alt: "Athlete wearing Oxy Plus nasal strip with performance stats" },
+  { src: oxyAthlete2, label: "Oxy Plus — Endurance Ad Creative", alt: "Female athlete wearing Oxy Plus nasal strip" },
+  { src: oxyMannequin, label: "Oxy Plus — Product Demonstration", alt: "Mannequin showing Oxy Plus nasal strip placement" },
+  { src: oxyPackaging, label: "Oxy Plus — Packaging Design", alt: "Oxy Plus packaging and product information" },
 ];
 
 const proofScreenshots = [
@@ -63,7 +87,7 @@ const CaseStudiesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.client}
@@ -75,7 +99,13 @@ const CaseStudiesSection = () => {
             >
               <div className="flex items-center justify-between mb-6">
                 <span className="text-xs tracking-widest uppercase text-muted-foreground">{study.industry}</span>
-                <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                {study.link ? (
+                  <a href={study.link} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 text-primary hover:text-primary/80 transition-colors" />
+                  </a>
+                ) : (
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                )}
               </div>
               <div className="mb-6">
                 <div className="font-display text-4xl font-bold gradient-text mb-1">{study.metric}</div>
@@ -83,8 +113,61 @@ const CaseStudiesSection = () => {
               </div>
               <h3 className="font-display text-lg font-semibold mb-2">{study.client}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed flex-1">{study.description}</p>
+              {study.link && (
+                <a
+                  href={study.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                >
+                  Visit Store <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </motion.div>
           ))}
+        </div>
+
+        {/* Oxy Plus Project Showcase */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <p className="text-xs tracking-widest uppercase text-muted-foreground mb-3">Featured Project</p>
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">
+              Oxy Plus — <span className="gradient-text">E-Commerce Launch</span>
+            </h3>
+            <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+              From concept to conversions: branding, AI product creatives, photoshoots & a live Shopify store.
+            </p>
+            <a
+              href="https://www.oxypluss.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 text-primary text-sm font-medium hover:underline"
+            >
+              www.oxypluss.com <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {oxyCreatives.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass rounded-2xl p-4 gradient-border hover:bg-card/60 transition-all duration-500 group"
+              >
+                <p className="text-sm font-medium text-foreground/80 mb-3">{item.label}</p>
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Live proof screenshots grid */}
