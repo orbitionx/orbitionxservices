@@ -1,6 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import adsDashboard from "@/assets/ads-dashboard-proof.png";
+import proofShopifySales from "@/assets/proof-shopify-sales.png";
+import proofMetaAds1 from "@/assets/proof-meta-ads-1.jpeg";
+import proofMetaAds2 from "@/assets/proof-meta-ads-2.jpeg";
+import proofInstagramAds from "@/assets/proof-instagram-ads.jpeg";
+import proofSeoCranes from "@/assets/proof-seo-cranes.png";
+import proofOrbitionSales from "@/assets/proof-orbition-sales.jpeg";
+import proofUsSales from "@/assets/proof-us-sales.jpeg";
 
 const caseStudies = [
   {
@@ -27,6 +34,17 @@ const caseStudies = [
     metric: "$2.4M",
     metricLabel: "Automated Revenue",
   },
+];
+
+const proofScreenshots = [
+  { src: proofShopifySales, label: "Shopify Analytics — QAR 3,370 Net Sales", alt: "Shopify sales analytics dashboard" },
+  { src: adsDashboard, label: "Meta Ads — Campaign Performance", alt: "Meta ads campaign dashboard" },
+  { src: proofMetaAds1, label: "Meta Ads — 385 App Installs at $0.89/Result", alt: "Meta ads app install campaign" },
+  { src: proofMetaAds2, label: "Meta Ads — Full Campaign View", alt: "Meta ads full campaign overview" },
+  { src: proofInstagramAds, label: "Instagram Ads — 876 Profile Visits at $0.27/Result", alt: "Instagram profile visit campaign" },
+  { src: proofSeoCranes, label: "SEO — #1 Google Ranking for Client", alt: "Google search ranking showing client at top" },
+  { src: proofOrbitionSales, label: "Shopify Store — $989.9 Sales, ↑17%", alt: "Shopify store sales dashboard" },
+  { src: proofUsSales, label: "US Store — $3,415.6 Sales, ↑519%", alt: "US store sales showing 519% growth" },
 ];
 
 const CaseStudiesSection = () => {
@@ -69,24 +87,34 @@ const CaseStudiesSection = () => {
           ))}
         </div>
 
-        {/* Live proof screenshot */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 glass rounded-2xl p-4 md:p-6 gradient-border"
-        >
-          <p className="text-xs tracking-widest uppercase text-muted-foreground mb-4 text-center">Live Campaign Dashboard</p>
-          <div className="rounded-xl overflow-hidden border border-border/30">
-            <img
-              src={adsDashboard}
-              alt="Live advertising campaign performance dashboard showing active campaigns and results"
-              className="w-full h-auto"
-              loading="lazy"
-            />
+        {/* Live proof screenshots grid */}
+        <div className="mt-16">
+          <p className="text-xs tracking-widest uppercase text-muted-foreground mb-8 text-center">
+            Live Dashboards & Results
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {proofScreenshots.map((proof, index) => (
+              <motion.div
+                key={proof.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass rounded-2xl p-4 gradient-border hover:bg-card/60 transition-all duration-500"
+              >
+                <p className="text-sm font-medium text-foreground/80 mb-3">{proof.label}</p>
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img
+                    src={proof.src}
+                    alt={proof.alt}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
