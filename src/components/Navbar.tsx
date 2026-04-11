@@ -3,35 +3,57 @@ import orbitionLogo from "@/assets/orbition-x-logo.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
-const navItems = ["Services", "About", "Portfolio", "Get a Quote"];
+const hashLinks = [
+  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const handleHashClick = (href: string) => {
+    setOpen(false);
+    if (location.pathname !== "/") {
+      window.location.href = "/" + href;
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={orbitionLogo} alt="Orbition X" className="h-8 w-8 object-contain" />
           <span className="font-display text-lg font-bold tracking-tight">Orbition X</span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {hashLinks.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
+              onClick={() => handleHashClick(item.href)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              {item}
+              {item.label}
             </a>
           ))}
+          <Link
+            to="/get-a-quote"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Get a Quote
+          </Link>
         </div>
 
-        <Button size="sm" className="hidden md:inline-flex rounded-full bg-primary hover:bg-primary/90 text-sm font-semibold px-6">
-          Contact
-        </Button>
+        <Link to="/get-a-quote">
+          <Button size="sm" className="hidden md:inline-flex rounded-full bg-primary hover:bg-primary/90 text-sm font-semibold px-6">
+            Free Evaluation
+          </Button>
+        </Link>
 
         <button
           onClick={() => setOpen(!open)}
@@ -52,19 +74,28 @@ const Navbar = () => {
             className="md:hidden overflow-hidden glass border-t border-white/5"
           >
             <div className="flex flex-col px-6 py-4 gap-4">
-              {navItems.map((item) => (
+              {hashLinks.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setOpen(false)}
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => handleHashClick(item.href)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
-              <Button size="sm" className="rounded-full bg-primary hover:bg-primary/90 text-sm font-semibold w-full mt-2">
-                Contact
-              </Button>
+              <Link
+                to="/get-a-quote"
+                onClick={() => setOpen(false)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+              >
+                Get a Quote
+              </Link>
+              <Link to="/get-a-quote" onClick={() => setOpen(false)}>
+                <Button size="sm" className="rounded-full bg-primary hover:bg-primary/90 text-sm font-semibold w-full mt-2">
+                  Free Evaluation
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}
