@@ -20,9 +20,11 @@ const CTASection = () => {
               Get Started Now
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline" size="lg" className="px-10 h-13 text-base font-semibold rounded-full border-border/50 hover:bg-muted">
-              Book a Call
-            </Button>
+            <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="px-10 h-13 text-base font-semibold rounded-full border-border/50 hover:bg-muted">
+                Book a Call
+              </Button>
+            </a>
           </div>
         </div>
       </div>

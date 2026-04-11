@@ -48,9 +48,11 @@ const HeroSection = () => {
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
-          <Button variant="outline" size="lg" className="px-8 h-12 text-base font-semibold rounded-full border-border/50 hover:bg-muted">
-            Book Consultation
-          </Button>
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" className="px-8 h-12 text-base font-semibold rounded-full border-border/50 hover:bg-muted">
+              Book Consultation
+            </Button>
+          </a>
         </div>
       </div>
 
