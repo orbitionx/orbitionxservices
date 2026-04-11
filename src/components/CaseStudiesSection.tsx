@@ -122,14 +122,14 @@ const projects = [
 
 const CaseStudiesSection = () => {
   return (
-    <section className="relative py-32 px-6" id="results">
+    <section className="relative py-32 px-6" id="portfolio">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] rounded-full bg-primary/3 blur-[120px]" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <p className="text-primary font-medium text-sm tracking-widest uppercase mb-4">
-            Our Projects
+            Portfolio
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
             Proof in <span className="gradient-text">Performance</span>
