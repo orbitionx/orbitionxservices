@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["Services", "About", "Results"];
+const navItems = ["Services", "About", "Portfolio", "Get a Quote"];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
