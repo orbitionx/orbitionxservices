@@ -1,20 +1,22 @@
+import AnimatedCounter from "./AnimatedCounter";
+
 const AboutSection = () => {
   return (
-    <section className="relative py-32 px-6" id="about">
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-[150px] -translate-y-1/2" />
+    <section className="relative py-20 sm:py-32 px-4 sm:px-6" id="about">
+      <div className="absolute top-1/2 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-secondary/5 blur-[150px] -translate-y-1/2" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Visual */}
           <div className="relative flex items-center justify-center">
-            <div className="relative w-80 h-80">
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full border border-primary/10 animate-spin-slow" />
               <div className="absolute inset-6 rounded-full border border-secondary/15 animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '15s' }} />
               <div className="absolute inset-12 rounded-full border border-accent/10 animate-spin-slow" style={{ animationDuration: '25s' }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-xl" />
-                <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span className="font-display text-2xl font-bold text-primary-foreground">OX</span>
+                <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-xl" />
+                <div className="absolute w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <span className="font-display text-xl sm:text-2xl font-bold text-primary-foreground">OX</span>
                 </div>
               </div>
               {/* Orbit dots */}
@@ -30,26 +32,19 @@ const AboutSection = () => {
           {/* Content */}
           <div>
             <p className="text-primary font-medium text-sm tracking-widest uppercase mb-4">Our Vision</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-5 sm:mb-6">
               Intelligence at the <span className="gradient-text">Core</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
               Orbition X was built on a singular belief: that every business deserves access to the same AI-powered systems that drive the world's most valuable companies.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-8">
               We don't just build tools — we architect complete growth ecosystems. From intelligent marketing automation to custom tech infrastructure, every system we create is designed to learn, adapt, and scale with your ambitions.
             </p>
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { value: "150+", label: "Projects Delivered" },
-                { value: "98%", label: "Client Retention" },
-                { value: "10x", label: "Average ROI" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-display text-3xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-muted-foreground text-sm mt-1">{stat.label}</div>
-                </div>
-              ))}
+            <div className="grid grid-cols-3 gap-4 sm:gap-6">
+              <AnimatedCounter value="150+" label="Projects Delivered" />
+              <AnimatedCounter value="98%" label="Client Retention" />
+              <AnimatedCounter value="10x" label="Average ROI" />
             </div>
           </div>
         </div>
