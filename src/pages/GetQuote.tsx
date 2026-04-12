@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowLeft, Send, Building2, User, Mail, Phone, Globe, MessageSquare } from "lucide-react";
+import { ArrowLeft, Send, Building2, User, Mail, Phone, Globe, MessageSquare, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const services = [
   { id: "custom-ai-agents", label: "Custom AI Agents" },
