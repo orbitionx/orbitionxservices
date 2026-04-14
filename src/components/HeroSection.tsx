@@ -41,7 +41,8 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground"
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          AI-Powered Growth Systems
+          <span className="font-mono tracking-wider">AI-Powered Growth Systems</span>
+          <span className="w-[2px] h-4 bg-accent animate-pulse ml-1" />
         </motion.div>
 
         <motion.h1
@@ -58,9 +59,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
+          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 px-2 font-light"
         >
-          We engineer AI-driven marketing systems, automation pipelines, and digital infrastructure that scales your business beyond limits.
+          We engineer <span className="text-primary/80 font-medium">AI-driven marketing systems</span>, automation pipelines, and digital infrastructure that scales your business beyond limits.
         </motion.p>
 
         <motion.div
