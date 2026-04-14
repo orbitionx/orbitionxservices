@@ -15,10 +15,17 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  const handleHashClick = (href: string) => {
+  const handleHashClick = (e: React.MouseEvent, href: string) => {
     setOpen(false);
     if (location.pathname !== "/") {
       window.location.href = "/" + href;
+      return;
+    }
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -35,7 +42,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={() => handleHashClick(item.href)}
+              onClick={(e) => handleHashClick(e, item.href)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
@@ -78,7 +85,7 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => handleHashClick(item.href)}
+                  onClick={(e) => handleHashClick(e, item.href)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
