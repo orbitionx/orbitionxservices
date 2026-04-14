@@ -6,12 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import GetQuote from "./pages/GetQuote.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ClickEffect from "./components/ClickEffect.tsx";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ClickEffect />
       <Toaster />
       <Sonner />
       <BrowserRouter>
