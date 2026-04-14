@@ -51,7 +51,7 @@ const HeroSection = () => {
           className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-5 sm:mb-6"
         >
           Build the Future<br />
-          <span className="gradient-text">with Intelligence</span>
+          <GlitchText><span className="gradient-text">with Intelligence</span></GlitchText>
         </motion.h1>
 
         <motion.p
