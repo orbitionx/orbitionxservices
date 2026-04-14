@@ -1,5 +1,6 @@
 import { Brain, BarChart3, Bot, PhoneCall, Users, Globe, TrendingUp, Palette } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const aiServices = [
   {
@@ -43,29 +44,56 @@ const marketingServices = [
   },
 ];
 
-const ServiceCard = ({ service, index }: { service: typeof aiServices[0]; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.5, delay: index * 0.15 }}
-    whileHover={{ y: -6, transition: { duration: 0.3 } }}
-    className="group relative glass rounded-2xl p-6 sm:p-8 hover:bg-card/60 transition-all duration-500 gradient-border"
-  >
+const ServiceCard = ({ service, index }: { service: typeof aiServices[0]; index: number }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
+  const rotateX = useTransform(mouseY, [0, 1], [3, -3]);
+  const rotateY = useTransform(mouseX, [0, 1], [-3, 3]);
+
+  const handleMouse = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
+  };
+
+  return (
     <motion.div
-      className={`w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 sm:mb-6`}
-      whileHover={{ scale: 1.15, rotate: 5 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      whileHover={{ y: -6, transition: { duration: 0.3 } }}
+      onMouseMove={handleMouse}
+      onMouseLeave={() => { mouseX.set(0.5); mouseY.set(0.5); }}
+      style={{ rotateX, rotateY, transformPerspective: 800 }}
+      className="group relative glass rounded-2xl p-6 sm:p-8 hover:bg-card/60 transition-all duration-500 gradient-border"
     >
-      <service.icon className="w-6 sm:w-7 h-6 sm:h-7 text-primary" />
+      <motion.div
+        className={`w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 sm:mb-6`}
+        whileHover={{ scale: 1.15, rotate: 5 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <service.icon className="w-6 sm:w-7 h-6 sm:h-7 text-primary" />
+      </motion.div>
+      <h3 className="font-display text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{service.title}</h3>
+      <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{service.description}</p>
+      
+      {/* Holographic sheen on hover */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-accent/5 to-secondary/0 animate-holo-shift" />
+      </div>
+      
+      {/* Corner accents */}
+      <div className="absolute top-3 right-3 w-3 h-[1px] bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute top-3 right-3 w-[1px] h-3 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute bottom-3 left-3 w-3 h-[1px] bg-accent/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute bottom-3 left-3 w-[1px] h-3 bg-accent/30 opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.div>
-    <h3 className="font-display text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{service.title}</h3>
-    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{service.description}</p>
-    
-    {/* Hover glow effect */}
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 transition-all duration-500 pointer-events-none" />
-  </motion.div>
-);
+  );
+};
 
 const ServicesSection = () => {
   return (

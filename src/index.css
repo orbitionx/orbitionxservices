@@ -102,4 +102,11 @@
     border-radius: 50%;
     position: absolute;
   }
+
+  .futuristic-grid {
+    background-image:
+      linear-gradient(hsl(216 100% 50% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(216 100% 50% / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
 }
