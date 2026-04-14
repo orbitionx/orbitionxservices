@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import AIBrainAnimation from "./AIBrainAnimation";
 import FloatingParticles from "./FloatingParticles";
+import GlitchText from "./GlitchText";
 
 const HeroSection = () => {
   return (

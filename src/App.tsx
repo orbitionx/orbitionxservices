@@ -7,12 +7,16 @@ import Index from "./pages/Index.tsx";
 import GetQuote from "./pages/GetQuote.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ClickEffect from "./components/ClickEffect.tsx";
+import ScanLines from "./components/ScanLines.tsx";
+import MatrixRain from "./components/MatrixRain.tsx";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <MatrixRain />
+      <ScanLines />
       <ClickEffect />
       <Toaster />
       <Sonner />
