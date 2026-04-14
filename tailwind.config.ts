@@ -92,6 +92,16 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
         },
+        "holo-shift": {
+          "0%": { transform: "translateX(-100%) rotate(15deg)" },
+          "100%": { transform: "translateX(200%) rotate(15deg)" },
+        },
+        "data-stream": {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { transform: "translateY(100vh)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +110,8 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "spin-slow": "spin-slow 20s linear infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "holo-shift": "holo-shift 3s ease-in-out infinite",
+        "data-stream": "data-stream 4s linear infinite",
       },
     },
   },
