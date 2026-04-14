@@ -15,10 +15,17 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  const handleHashClick = (href: string) => {
+  const handleHashClick = (e: React.MouseEvent, href: string) => {
     setOpen(false);
     if (location.pathname !== "/") {
       window.location.href = "/" + href;
+      return;
+    }
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
