@@ -42,7 +42,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={() => handleHashClick(item.href)}
+              onClick={(e) => handleHashClick(e, item.href)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
@@ -85,7 +85,7 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => handleHashClick(item.href)}
+                  onClick={(e) => handleHashClick(e, item.href)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
