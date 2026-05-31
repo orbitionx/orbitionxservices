@@ -109,4 +109,9 @@
       linear-gradient(90deg, hsl(216 100% 50% / 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
+
+  .font-ar {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+  }
 }
