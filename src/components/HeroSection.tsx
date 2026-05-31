@@ -49,11 +49,20 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-5 sm:mb-6"
+          className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-3"
         >
           Build the Future<br />
           <GlitchText><span className="gradient-text">with Intelligence</span></GlitchText>
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="font-ar text-lg sm:text-2xl text-muted-foreground/40 font-light mb-5 sm:mb-6"
+        >
+          أنظمة النمو الذكية
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -80,6 +89,27 @@ const HeroSection = () => {
             </Button>
           </a>
         </motion.div>
+
+        {/* License strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mt-8 sm:mt-10 inline-flex flex-col sm:flex-row gap-px overflow-hidden rounded-lg border border-border/50 bg-card/30 backdrop-blur-sm"
+        >
+          {[
+            { val: "329140", key: "License No.", ar: "رقم الرخصة", cls: "text-secondary" },
+            { val: "240212", key: "C.R. Number", ar: "السجل التجاري", cls: "text-secondary" },
+            { val: "ACTIVE", key: "Status", ar: "الحالة", cls: "text-accent" },
+          ].map((it) => (
+            <div key={it.key} className="px-6 py-3 sm:min-w-[150px] text-center bg-card/40 sm:border-r border-b sm:border-b-0 border-border/40 last:border-0">
+              <div className={`font-display text-sm font-bold tracking-wider ${it.cls}`}>{it.val}</div>
+              <div className="text-[8px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-1">{it.key}</div>
+              <div className="font-ar text-[10px] text-muted-foreground/60">{it.ar}</div>
+            </div>
+          ))}
+        </motion.div>
+
 
         {/* Scroll indicator */}
         <motion.div
