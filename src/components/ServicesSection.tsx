@@ -84,7 +84,8 @@ const ServiceCard = ({ service, index }: { service: typeof aiServices[0]; index:
       >
         <service.icon className="w-6 sm:w-7 h-6 sm:h-7 text-primary" />
       </motion.div>
-      <h3 className="font-display text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{service.title}</h3>
+      <h3 className="font-display text-lg sm:text-xl font-semibold mb-1">{service.title}</h3>
+      {service.titleAr && <div className="font-ar text-xs text-secondary/80 mb-2 sm:mb-3">{service.titleAr}</div>}
       <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{service.description}</p>
       
       {/* Holographic sheen on hover */}
