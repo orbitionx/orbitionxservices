@@ -6,18 +6,21 @@ const aiServices = [
   {
     icon: Bot,
     title: "Custom AI Agents",
+    titleAr: "وكلاء الذكاء الاصطناعي",
     description: "Tailor-made AI agents built for your specific business workflows — from lead qualification to data processing and internal operations.",
     gradient: "from-primary/20 to-secondary/20",
   },
   {
     icon: Users,
     title: "AI Customer Service",
+    titleAr: "خدمة العملاء بالذكاء الاصطناعي",
     description: "24/7 intelligent customer support agents that handle queries, resolve issues, and escalate seamlessly — reducing response time by 90%.",
     gradient: "from-secondary/20 to-accent/10",
   },
   {
     icon: PhoneCall,
     title: "AI Calling Agents",
+    titleAr: "وكلاء الاتصال الذكي",
     description: "Voice-powered AI agents that make and receive calls, book appointments, qualify leads, and follow up — fully autonomous.",
     gradient: "from-accent/10 to-primary/20",
   },
@@ -27,18 +30,21 @@ const marketingServices = [
   {
     icon: TrendingUp,
     title: "Performance Marketing",
+    titleAr: "التسويق الأداءي",
     description: "Data-driven ad campaigns across Meta, Google & TikTok that maximize ROAS and scale revenue predictably.",
     gradient: "from-primary/20 to-secondary/20",
   },
   {
     icon: Globe,
     title: "Website Development",
+    titleAr: "تطوير المواقع",
     description: "High-converting Shopify stores, WordPress sites, and custom web applications — designed to turn visitors into customers.",
     gradient: "from-secondary/20 to-accent/10",
   },
   {
     icon: Palette,
     title: "Branding & Creatives",
+    titleAr: "الهوية والإبداع",
     description: "End-to-end brand identity, product photography, AI-generated creatives, and conversion-optimized design systems.",
     gradient: "from-accent/10 to-primary/20",
   },
@@ -78,7 +84,8 @@ const ServiceCard = ({ service, index }: { service: typeof aiServices[0]; index:
       >
         <service.icon className="w-6 sm:w-7 h-6 sm:h-7 text-primary" />
       </motion.div>
-      <h3 className="font-display text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{service.title}</h3>
+      <h3 className="font-display text-lg sm:text-xl font-semibold mb-1">{service.title}</h3>
+      {service.titleAr && <div className="font-ar text-xs text-secondary/80 mb-2 sm:mb-3">{service.titleAr}</div>}
       <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{service.description}</p>
       
       {/* Holographic sheen on hover */}
