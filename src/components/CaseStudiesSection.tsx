@@ -26,8 +26,23 @@ import proofRains from "@/assets/proof-rains-store.jpg";
 import proofTaika from "@/assets/proof-taika-store.jpg";
 import proofWakeup from "@/assets/proof-wakeup-store.png";
 import proofShopifyDaily from "@/assets/proof-shopify-daily-sales.webp";
+import tailixProfile from "@/assets/tailix-profile.png";
+import proofTailixAds from "@/assets/proof-tailix-ads.jpeg";
 
 const projects = [
+  {
+    client: "Tailix (tailix.qa)",
+    industry: "Performance Marketing & Social Media",
+    description:
+      "Qatari-based all-in-one pet platform — Shop, Care, Connect. We run performance marketing and social media for Tailix, driving qualified app installs across iOS scale campaigns with optimized cost-per-result and growing an engaged community of pet lovers in Qatar.",
+    metric: "385",
+    metricLabel: "Mobile App Installs · 22.4K Reach",
+    link: "https://www.tailix.qa",
+    images: [
+      { src: tailixProfile, label: "@tailix.qa — Instagram", alt: "Tailix Instagram profile" },
+      { src: proofTailixAds, label: "iOS Scale Phase 1 — 385 Installs, ر.ق 0.89 CPI", alt: "Meta Ads campaign showing 385 mobile app installs for Tailix" },
+    ],
+  },
   {
     client: "Oxy Plus",
     industry: "E-commerce / Health",
