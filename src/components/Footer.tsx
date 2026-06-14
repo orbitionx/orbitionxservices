@@ -12,15 +12,6 @@ const Footer = () => {
           <span className="font-ar text-[10px] text-muted-foreground/50 mt-1">الدوحة، قطر</span>
         </div>
 
-        <div className="flex flex-col items-center md:items-end gap-1 text-xs text-muted-foreground">
-          <div className="tracking-wider">
-            CR: <span className="text-secondary font-semibold">240212</span> · License: <span className="text-secondary font-semibold">329140</span>
-          </div>
-          <a href="https://orbition-x-glow.lovable.app" className="text-accent hover:underline text-[11px]">
-            orbition-x-glow.lovable.app
-          </a>
-          <p className="text-[10px] text-muted-foreground/60">© 2026 Orbition X Services. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );
