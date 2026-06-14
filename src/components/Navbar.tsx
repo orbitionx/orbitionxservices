@@ -5,29 +5,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
-const hashLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
+const navLinks = [
+  { label: "Services", to: "/services" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "About", to: "/about" },
+  { label: "Get a Quote", to: "/get-a-quote" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-
-  const handleHashClick = (e: React.MouseEvent, href: string) => {
-    setOpen(false);
-    if (location.pathname !== "/") {
-      window.location.href = "/" + href;
-      return;
-    }
-    e.preventDefault();
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
@@ -38,22 +25,19 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {hashLinks.map((item) => (
-            <a
+          {navLinks.map((item) => (
+            <Link
               key={item.label}
-              href={item.href}
-              onClick={(e) => handleHashClick(e, item.href)}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              to={item.to}
+              className={`text-sm transition-colors ${
+                location.pathname === item.to
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <Link
-            to="/get-a-quote"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Get a Quote
-          </Link>
         </div>
 
         <Link to="/get-a-quote">
@@ -81,23 +65,16 @@ const Navbar = () => {
             className="md:hidden overflow-hidden glass border-t border-white/5"
           >
             <div className="flex flex-col px-6 py-4 gap-4">
-              {hashLinks.map((item) => (
-                <a
+              {navLinks.map((item) => (
+                <Link
                   key={item.label}
-                  href={item.href}
-                  onClick={(e) => handleHashClick(e, item.href)}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <Link
-                to="/get-a-quote"
-                onClick={() => setOpen(false)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
-              >
-                Get a Quote
-              </Link>
               <Link to="/get-a-quote" onClick={() => setOpen(false)}>
                 <Button size="sm" className="rounded-full bg-primary hover:bg-primary/90 text-sm font-semibold w-full mt-2">
                   Free Evaluation
