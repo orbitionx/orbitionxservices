@@ -1,3 +1,4 @@
+import orbitionLogo from "@/assets/orbition-logo-new.png.asset.json";
 import { Instagram, Globe } from "lucide-react";
 
 const Footer = () => {
