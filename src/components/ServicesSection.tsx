@@ -1,4 +1,4 @@
-import { Brain, BarChart3, Bot, PhoneCall, Users, Globe, TrendingUp, Palette } from "lucide-react";
+import { Brain, BarChart3, Bot, PhoneCall, Users, Globe, TrendingUp, Palette, Search, Share2, FileText, Mail, PenTool, Video } from "lucide-react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -34,11 +34,52 @@ const marketingServices = [
     description: "Data-driven ad campaigns across Meta, Google & TikTok that maximize ROAS and scale revenue predictably.",
     gradient: "from-primary/20 to-secondary/20",
   },
+];
+
+const growthServices = [
+  {
+    icon: Search,
+    title: "SEO",
+    titleAr: "تحسين محركات البحث",
+    description: "Technical and content SEO that drives organic visibility, local rankings, and sustainable traffic growth.",
+    gradient: "from-primary/20 to-secondary/20",
+  },
+  {
+    icon: Share2,
+    title: "Social Media Management",
+    titleAr: "إدارة وسائل التواصل الاجتماعي",
+    description: "Platform-native content calendars, community management, and growth strategies for Instagram, LinkedIn, TikTok & more.",
+    gradient: "from-secondary/20 to-accent/10",
+  },
+  {
+    icon: FileText,
+    title: "Content Marketing",
+    titleAr: "تسويق المحتوى",
+    description: " blogs, case studies, and lead magnets that educate your audience and build long-term authority.",
+    gradient: "from-accent/10 to-primary/20",
+  },
+  {
+    icon: Mail,
+    title: "Email Marketing",
+    titleAr: "التسويق عبر البريد الإلكتروني",
+    description: "Automated email sequences, newsletters, and retention campaigns that nurture leads and increase lifetime value.",
+    gradient: "from-primary/20 to-secondary/20",
+  },
+];
+
+const creativeServices = [
   {
     icon: Globe,
     title: "Website Development",
     titleAr: "تطوير المواقع",
     description: "High-converting Shopify stores, WordPress sites, and custom web applications — designed to turn visitors into customers.",
+    gradient: "from-primary/20 to-secondary/20",
+  },
+  {
+    icon: PenTool,
+    title: "Graphic Design",
+    titleAr: "التصميم الجرافيكي",
+    description: "Stunning visuals, social creatives, packaging, and print design that communicate your brand at a glance.",
     gradient: "from-secondary/20 to-accent/10",
   },
   {
@@ -47,6 +88,13 @@ const marketingServices = [
     titleAr: "الهوية والإبداع",
     description: "End-to-end brand identity, product photography, AI-generated creatives, and conversion-optimized design systems.",
     gradient: "from-accent/10 to-primary/20",
+  },
+  {
+    icon: Video,
+    title: "Video Production",
+    titleAr: "إنتاج الفيديو",
+    description: "Short-form reels, explainers, motion graphics, and ad creatives that capture attention and drive conversions.",
+    gradient: "from-primary/20 to-secondary/20",
   },
 ];
 
@@ -144,8 +192,8 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Marketing Agency */}
-        <div id="marketing" className="scroll-mt-24">
+        {/* Marketing & Advertising */}
+        <div id="marketing" className="mb-12 sm:mb-16 scroll-mt-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -156,10 +204,52 @@ const ServicesSection = () => {
             <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center">
               <BarChart3 className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
             </div>
-            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Marketing Agency</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Marketing & Advertising</h3>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {marketingServices.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Growth Marketing */}
+        <div id="growth" className="mb-12 sm:mb-16 scroll-mt-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-6 sm:mb-8"
+          >
+            <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-secondary/30 to-primary/30 flex items-center justify-center">
+              <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Growth Marketing</h3>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {growthServices.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Creative & Design */}
+        <div id="creative" className="scroll-mt-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-6 sm:mb-8"
+          >
+            <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-accent/20 to-primary/30 flex items-center justify-center">
+              <Palette className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Creative & Design</h3>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {creativeServices.map((service, index) => (
               <ServiceCard key={service.title} service={service} index={index} />
             ))}
           </div>
