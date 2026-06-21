@@ -124,7 +124,7 @@ const ServicesSection = () => {
         </div>
 
         {/* AI Agency */}
-        <div className="mb-12 sm:mb-16">
+        <div id="ai" className="mb-12 sm:mb-16 scroll-mt-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -145,7 +145,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Marketing Agency */}
-        <div>
+        <div id="marketing" className="scroll-mt-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
