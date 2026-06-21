@@ -1,5 +1,5 @@
+import orbitionLogo from "@/assets/orbition-logo-new.png.asset.json";
 import { Button } from "@/components/ui/button";
-import orbitionLogo from "@/assets/orbition-x-logo.png";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
