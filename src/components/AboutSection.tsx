@@ -1,3 +1,4 @@
+import orbitionLogo from "@/assets/orbition-logo-new.png.asset.json";
 import AnimatedCounter from "./AnimatedCounter";
 
 const AboutSection = () => {
@@ -15,8 +16,8 @@ const AboutSection = () => {
               <div className="absolute inset-12 rounded-full border border-accent/10 animate-spin-slow" style={{ animationDuration: '25s' }} />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-xl" />
-                <div className="absolute w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span className="font-display text-xl sm:text-2xl font-bold text-primary-foreground">OX</span>
+                <div className="absolute w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-2.5">
+                  <img src={orbitionLogo.url} alt="Orbition X" className="w-full h-full object-contain rounded-full" />
                 </div>
               </div>
               {/* Orbit dots */}

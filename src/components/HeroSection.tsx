@@ -51,8 +51,8 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-3"
         >
-          Build the Future<br />
-          <GlitchText><span className="gradient-text">with Intelligence</span></GlitchText>
+          Attention Isn't<br />
+          <GlitchText><span className="gradient-text">Given. It's Taken.</span></GlitchText>
         </motion.h1>
 
         <motion.div
