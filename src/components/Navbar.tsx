@@ -6,12 +6,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const servicesDropdown = [
+  { label: "AI Agents & Automation", heading: true },
   { label: "Custom AI Agents", to: "/services#ai" },
   { label: "AI Customer Service", to: "/services#ai" },
   { label: "AI Calling Agents", to: "/services#ai" },
+  { label: "Marketing & Advertising", heading: true },
   { label: "Performance Marketing", to: "/services#marketing" },
-  { label: "Website Development", to: "/services#marketing" },
-  { label: "Branding & Creatives", to: "/services#marketing" },
+  { label: "Growth Marketing", heading: true },
+  { label: "SEO", to: "/services#growth" },
+  { label: "Social Media Management", to: "/services#growth" },
+  { label: "Content Marketing", to: "/services#growth" },
+  { label: "Email Marketing", to: "/services#growth" },
+  { label: "Creative & Design", heading: true },
+  { label: "Website Development", to: "/services#creative" },
+  { label: "Graphic Design", to: "/services#creative" },
+  { label: "Branding & Creatives", to: "/services#creative" },
+  { label: "Video Production", to: "/services#creative" },
 ];
 
 const navLinks = [
@@ -62,18 +72,27 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.18 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[240px]"
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[260px]"
                     >
-                      <div className="glass rounded-xl border border-white/5 py-2 shadow-xl">
-                        {item.dropdown.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            to={sub.to}
-                            className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                      <div className="glass rounded-xl border border-white/5 py-2 shadow-xl max-h-[70vh] overflow-y-auto">
+                        {item.dropdown.map((sub) =>
+                          sub.heading ? (
+                            <div
+                              key={sub.label}
+                              className="px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-secondary/70"
+                            >
+                              {sub.label}
+                            </div>
+                          ) : (
+                            <Link
+                              key={sub.label}
+                              to={sub.to}
+                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+                            >
+                              {sub.label}
+                            </Link>
+                          )
+                        )}
                       </div>
                     </motion.div>
                   )}
@@ -138,16 +157,25 @@ const Navbar = () => {
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden pl-4 flex flex-col gap-1"
                         >
-                          {item.dropdown.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              to={sub.to}
-                              onClick={() => setOpen(false)}
-                              className="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
+                          {item.dropdown.map((sub) =>
+                            sub.heading ? (
+                              <div
+                                key={sub.label}
+                                className="pt-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-secondary/70"
+                              >
+                                {sub.label}
+                              </div>
+                            ) : (
+                              <Link
+                                key={sub.label}
+                                to={sub.to}
+                                onClick={() => setOpen(false)}
+                                className="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5"
+                              >
+                                {sub.label}
+                              </Link>
+                            )
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
