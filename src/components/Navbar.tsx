@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={orbitionLogo} alt="Orbition X" className="h-8 w-8 object-contain" />
+          <img src={orbitionLogo.url} alt="Orbition X" className="h-9 w-9 object-contain rounded-lg bg-black" />
           <span className="font-display text-lg font-bold tracking-tight">Orbition X</span>
         </Link>
 
