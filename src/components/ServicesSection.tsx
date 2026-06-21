@@ -192,8 +192,8 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Marketing Agency */}
-        <div id="marketing" className="scroll-mt-24">
+        {/* Marketing & Advertising */}
+        <div id="marketing" className="mb-12 sm:mb-16 scroll-mt-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -204,10 +204,52 @@ const ServicesSection = () => {
             <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center">
               <BarChart3 className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
             </div>
-            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Marketing Agency</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Marketing & Advertising</h3>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {marketingServices.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Growth Marketing */}
+        <div id="growth" className="mb-12 sm:mb-16 scroll-mt-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-6 sm:mb-8"
+          >
+            <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-secondary/30 to-primary/30 flex items-center justify-center">
+              <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Growth Marketing</h3>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {growthServices.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Creative & Design */}
+        <div id="creative" className="scroll-mt-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-6 sm:mb-8"
+          >
+            <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-to-br from-accent/20 to-primary/30 flex items-center justify-center">
+              <Palette className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">Creative & Design</h3>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {creativeServices.map((service, index) => (
               <ServiceCard key={service.title} service={service} index={index} />
             ))}
           </div>
