@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { val: "3", label: "Licensed Activities", ar: "الأنشطة المرخصة", color: "text-accent" },
-  { val: "360°", label: "Full Funnel", ar: "التغطية الكاملة", color: "text-secondary" },
-  { val: "8+", label: "Industries Served", ar: "القطاعات المخدومة", color: "text-primary" },
+  { val: "5x", label: "Avg. ROAS Delivered", ar: "متوسط العائد على الإنفاق", color: "text-accent" },
+  { val: "120+", label: "Campaigns Launched", ar: "حملة تم إطلاقها", color: "text-secondary" },
+  { val: "360°", label: "Full-Funnel Coverage", ar: "تغطية القمع الكاملة", color: "text-primary" },
+  { val: "8+", label: "Industries Served", ar: "القطاعات المخدومة", color: "text-accent" },
 ];
 
 const StatsBar = () => {
   return (
     <section className="relative border-y border-border/50 bg-card/30 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-border/40">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
