@@ -12,12 +12,16 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionDivider from "@/components/SectionDivider";
+import TrustedBy from "@/components/TrustedBy";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground futuristic-grid">
       <Navbar />
       <HeroSection />
+      <AnimatedSection>
+        <TrustedBy />
+      </AnimatedSection>
       <AnimatedSection>
         <StatsBar />
       </AnimatedSection>
