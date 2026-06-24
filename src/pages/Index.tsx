@@ -7,6 +7,7 @@ import ProcessSection from "@/components/ProcessSection";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
+import ROICalculator from "@/components/ROICalculator";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
