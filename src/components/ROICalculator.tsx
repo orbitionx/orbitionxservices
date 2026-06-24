@@ -126,7 +126,7 @@ const ROICalculator = () => {
   const applyIndustry = (index: number) => {
     const ind = industries[index];
     setCpc(ind.cpc);
-    setConversionRate(ind.conversionRate);
+    setConversionRate(ind.conversion);
     setSelectedIndustry(index);
   };
 
