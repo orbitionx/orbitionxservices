@@ -70,7 +70,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 px-2 font-light"
         >
-          We engineer <span className="text-primary/80 font-medium">AI-driven marketing systems</span>, automation pipelines, and digital infrastructure that scales your business beyond limits.
+          From <span className="text-primary/80 font-medium">localized SEO</span> and high-conversion Google Ads to <span className="text-secondary/90 font-medium">AI automation</span> — the full-funnel growth engine built to dominate the Qatari market and beyond.
         </motion.p>
 
         <motion.div
