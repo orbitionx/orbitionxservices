@@ -52,6 +52,10 @@ const Index = () => {
       </AnimatedSection>
       <SectionDivider />
       <AnimatedSection>
+        <ROICalculator />
+      </AnimatedSection>
+      <SectionDivider />
+      <AnimatedSection>
         <ContactSection />
       </AnimatedSection>
       <SectionDivider />
